@@ -51,7 +51,7 @@ function Pv(props) {
           </div>
           <div>
             <p>{pv} Watt</p>
-            <p>{pvvolt} Volt</p>
+            <p>{pvvolt} V</p>
           </div>
         </div>
       </div>

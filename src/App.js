@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import HeaderBar from "./layout/HeadBar";
+import SideBar from "./layout/SideBar";
+
+import { Routes, Route } from "react-router-dom";
+import { CssBaseline, Box } from "@mui/material";
+
+import Dashboard from "./component/admin/Dashboard";
+import Manage from "./component/admin/Manage";
+import ViewData from "./component/admin/ViewData";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CssBaseline />
+      <div className="app">
+        <SideBar />
+        <main className="content">
+          <HeaderBar />
+          <div className="content_body">
+            <Box m="20px">
+              <Routes>
+                <Route path="/admin/Dashboard" element={<Dashboard />} />
+                <Route path="/admin/Manage" element={<Manage />} />
+                <Route path="/admin/Viewtable" element={<ViewData />} />
+              </Routes>
+            </Box>
+          </div>
+
+        </main>
+      </div>
+    </>
   );
 }
 

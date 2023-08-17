@@ -1,37 +1,43 @@
-
-
 .grid {
     display: grid;
-  }
-  .grid p {
-    color: rgb(0, 0, 0);
-    font-size: 80%;
-    margin: 0px;
-  }
-  .circlegrid {
+    place-content: center;
+}
+
+.grid p {
+    color: black;
+    font-size: 70%;
+    margin: -8px;
+    align-self: center;
+}
+
+.circlegrid {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     border: 4px solid #F898A4;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-  }
-  .circlegridbackground{
+    width: 70px;
+    height: 70px;
+    background-color: white;
+}
+
+.circlegridbackground {
     background-clip: padding-box;
     box-shadow: 0 0 0 2px #99d4f4;
     padding: 4px;
     border-radius: 50%;
-  }
-  .circlegridbackground{
+}
+
+.circlegridbackground {
     background-clip: padding-box;
     box-shadow: 0 0 0 2px hsla(352, 75%, 63%, 0.482);
-    padding: 4px;
+    padding: 2px;
     border-radius: 50%;
-  }
-  .icongrid {
+}
+
+.icongrid {
     width: 40px;
     height: 40px;
     filter: invert(0);
-  }
+}

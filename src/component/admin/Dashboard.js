@@ -4,44 +4,86 @@ import Grid from '../../Data/Grid';
 import Inverter from '../../Data/Inverter';
 import Load from '../../Data/Load';
 import Pv from '../../Data/Pv';
-import './Dashboard.css'
+import './Dashboard.css';
+import Linechart from './Linechart';
+import Barchart from './Barchart'
+import PieChart from './PieChart'
+
 const Dashboard = () => {
     return (
-        <div>
+        <div className='contain-flex'>
+
+            <div className='flex-box'>
+                <div className='flex-box-below'>
+                    <p>Test</p>
+                </div>
+                <div className='flex-box-below-left'>
+                    <p>Test</p>
+                </div>
+                <div className='flex-box-below-right'>
+                    <p>Test</p>
+                </div>
+            </div>
             <div className='flex-box'>
                 <div className='flex-box-monitor'>
-
-                    {/* <svg width="300" height="300" viewBox="0 0 1100 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M482.668 535.736C490.965 544.033 497.546 553.882 502.036 564.722C506.526 575.562 508.837 587.18 508.837 598.913C508.837 610.646 506.526 622.264 502.036 633.104C497.546 643.943 490.965 653.793 482.668 662.089L476.351 655.771C483.817 648.305 489.74 639.44 493.781 629.684C497.822 619.929 499.902 609.472 499.902 598.913C499.902 588.353 497.822 577.897 493.781 568.141C489.74 558.385 483.817 549.521 476.351 542.054L482.668 535.736Z" fill="#C81B1B" />
-                        <line x1="479.132" y1="539.272" x2="269.387" y2="329.526" stroke="#C81B1B" stroke-width="10" />
-                        <line x1="479.886" y1="659.307" x2="270.14" y2="869.053" stroke="#C81B1B" stroke-width="10" />
-                        <path d="M537 716.421C545.296 708.124 555.146 701.543 565.986 697.053C576.825 692.563 588.444 690.252 600.176 690.252C611.909 690.252 623.527 692.563 634.367 697.053C645.207 701.543 655.056 708.124 663.353 716.421L657.035 722.738C649.568 715.272 640.704 709.349 630.948 705.308C621.192 701.267 610.736 699.187 600.176 699.187C589.617 699.187 579.161 701.267 569.405 705.308C559.649 709.349 550.785 715.272 543.318 722.738L537 716.421Z" fill="#FBD822" />
-                        <line x1="540.536" y1="719.956" x2="330.79" y2="929.702" stroke="#FBD822" stroke-width="10" />
-                        <line x1="660.57" y1="719.203" x2="870.316" y2="928.949" stroke="#FBD822" stroke-width="10" />
-                        <path d="M716.421 663.353C708.124 655.056 701.543 645.207 697.053 634.367C692.563 623.527 690.252 611.909 690.252 600.176C690.252 588.443 692.563 576.825 697.053 565.985C701.543 555.146 708.124 545.296 716.421 537L722.739 543.317C715.272 550.784 709.349 559.649 705.308 569.404C701.267 579.16 699.187 589.617 699.187 600.176C699.187 610.736 701.267 621.192 705.308 630.948C709.349 640.704 715.272 649.568 722.739 657.035L716.421 663.353Z" fill="#1FE31B" />
-                        <line x1="719.957" y1="659.817" x2="929.703" y2="869.563" stroke="#1FE31B" stroke-width="10" />
-                        <line x1="719.203" y1="539.782" x2="928.949" y2="330.036" stroke="#1FE31B" stroke-width="10" />
-                        <path d="M662.089 482.668C653.792 490.964 643.943 497.545 633.103 502.036C622.263 506.526 610.645 508.836 598.912 508.836C587.179 508.836 575.561 506.526 564.722 502.036C553.882 497.546 544.032 490.964 535.736 482.668L542.054 476.35C549.52 483.817 558.385 489.74 568.141 493.781C577.896 497.822 588.353 499.902 598.912 499.902C609.472 499.902 619.928 497.822 629.684 493.781C639.44 489.74 648.304 483.817 655.771 476.35L662.089 482.668Z" fill="#369DFD" />
-                        <line x1="658.553" y1="479.133" x2="868.299" y2="269.387" stroke="#369DFD" stroke-width="10" />
-                        <line x1="538.518" y1="479.886" x2="328.773" y2="270.14" stroke="#369DFD" stroke-width="10" />
-                    </svg> */}
-
                     <div className='flex-box1'>
+                        <Pv />
+                    </div>
+                    <div className='flex-box2'>
                         <Batt />
-                        <Grid />
+                        <Load />
                     </div>
                     <div className='flex-box3'>
-                        <div className='batttoload'></div>
-                        <div className='batttoloadline'></div>
+                        <Grid />
                     </div>
-                    <div className='flex-box4'>
-                        <Load />
-                        <div className='solartoloadline'></div>
-                        <div className='solartoload'></div>
-                        <Pv />
+                </div>
+                <div className='flex-box-basic'>
+                    <div className='topic-data'>
+                        <h1>Basic info</h1>
+                    </div>
+                    <div>
+                        <p>Grid Volt:</p>
+                        <p>Grid Fre:</p>
+                        <p>BAT Volt:</p>
+                        <p>BAT Cap:</p>
+                        <p>Charge current:</p>
+                    </div>
+                    <div>
+                        <p>Output Volt:</p>
+                        <p>Output Fre:</p>
+                        <p>Output apparent power:</p>
+                        <p>Output active power:</p>
+                    </div>
+                    <div>
+                        <p>Output load percent:</p>
+                        <p>PV Volt:</p>
+                        <p>PV current:</p>
+                        <p>PV Charging power:</p>
+                    </div>
+                </div>
+
+                <div className='flex-box-rate'>
+                    <div>
+                        <p>Ac rated Volt:</p>
+                        <p>Ac reated current:</p>
+                        <p>Rated BAT Volt:</p>
+                    </div>
+                    <div>
+                        <p>Rated output Volt:</p>
+                        <p>Rated output Fre:</p>
+                        <p>Rated output current:</p>
                     </div>
                 </div>
             </div>
+            <div className='flex-box-2'>
+                <div className='flex-box-graph'>
+                    <Linechart/>
+                </div>
+                <div className='flex-box-graph-right'>
+                  <PieChart/>
+                </div>
+            </div>
+
         </div>
     )
 }

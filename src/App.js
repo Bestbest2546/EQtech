@@ -19,13 +19,13 @@ function App() {
           <div className="content_body">
             <Box m="20px">
               <Routes>
+                <Route path="/" element={<Dashboard />} />
                 <Route path="/admin/Dashboard" element={<Dashboard />} />
                 <Route path="/admin/Manage" element={<Manage />} />
                 <Route path="/admin/Viewtable" element={<ViewData />} />
               </Routes>
             </Box>
           </div>
-
         </main>
       </div>
     </>

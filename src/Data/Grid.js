@@ -33,7 +33,7 @@ function Grid() {
             <img src={Powericon} alt="grid" className="icongrid" />
           </div>
           <div>
-            <p>Volt: {grid} V</p>
+            <p>{grid} V</p>
           </div>
         </div>
       </div>

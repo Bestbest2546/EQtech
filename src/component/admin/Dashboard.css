@@ -1,43 +1,136 @@
+.contain-flex {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
 .flex-box {
     display: flex;
-    flex-grow: row nowrap;
+    flex-grow: row;
     border: 1px solid;
     border-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
+.flex-box-2 {
+    display: flex;
+    flex-grow: row;
+    border: 1px solid;
+    border-color: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    gap: 20px;
+
+
+}
+
+.flex-box-graph {
+    display: flex;
+    flex-flow: column;
+    width: 70%;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 1);
+    justify-content: center;
+}
+
 .flex-box-monitor {
     display: flex;
-    flex-flow: column nowrap;
-    width: 370px;
+    flex-flow: column;
+    width: 450px;
     padding: 20px;
-    transform: scale(0.7);
+    border-color: rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.flex-box-below {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.flex-box-below-left {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.flex-box-below-right {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.flex-box-basic {
+    display: flex;
+    flex-flow: row;
+    width: fit-content;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.flex-box-basic p {
+    font-size: 22px;
+}
+
+.flex-box-graph-right {
+    display: flex;
+    flex-flow: row;
+    padding: 20px;
+    width: 30%;
+    border-color: rgba(0, 0, 0, 0.1);
+
+}
+
+
+.flex-box-rate {
+    display: flex;
+    flex-flow: row;
+    width: fit-content;
+    padding: 20px;
+    border-color: rgba(0, 0, 0, 0.1);
+
+    gap: 70px;
+}
+
+.flex-box-rate p {
+    font-size: 22px;
 }
 
 .flex-box-rating {
-    border: 1px solid black;
+    border-color: rgba(0, 0, 0, 0.1);
+
     display: flex;
 }
 
 .flex-box1 {
-    align-self: start;
-    flex-wrap: nowrap;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    z-index: 1;
+    align-self: center;
+    width: fit-content;
+    margin-bottom: 60px;
 }
 
 .flex-box2 {
-    border: 1px solid black;
+    display: flex;
+    align-self: center;
+    width: fit-content;
+    gap: 200px;
 }
 
 .flex-box3 {
     align-self: center;
-    height: 100px;
-    width: 100%;
+    width: fit-content;
+    margin-top: 60px;
 }
+
 .batttoload {
     width: 20px;
     height: 20px;
@@ -48,8 +141,9 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     margin-left: 40px;
-    z-index: -1;
+    z-index: 2;
 }
+
 @keyframes example {
     0% {
         background-color: rgb(29, 198, 245);
@@ -63,6 +157,7 @@
         top: 130px;
     }
 }
+
 .batttoloadline {
     width: 2px;
     height: 90px;
@@ -70,13 +165,16 @@
     border-radius: 50%;
     transform: translateY(-106px);
     animation-name: exampleline;
-    animation-duration:3s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     margin-left: 49px;
-    z-index: -2;
+    z-index: 2;
 }
+
 @keyframes exampleline {
-    0%, 100% {
+
+    0%,
+    100% {
         background-color: rgb(29, 198, 245);
         top: 90px;
     }
@@ -86,6 +184,7 @@
         top: 90px;
     }
 }
+
 .solartoload {
     width: 35px;
     height: 20px;
@@ -96,8 +195,9 @@
     animation-duration: 3s;
     animation-iteration-count: infinite;
     margin-top: 43px;
-    z-index: -1;
+    z-index: 2;
 }
+
 @keyframes solar {
     0% {
         background-color: rgb(234, 245, 29);
@@ -111,6 +211,7 @@
         right: 210px;
     }
 }
+
 .solartoloadline {
     width: 190px;
     height: 2px;
@@ -118,13 +219,16 @@
     border-radius: 50%;
     transform: translateX(100px);
     animation-name: solarline;
-    animation-duration:3s;
+    animation-duration: 3s;
     animation-iteration-count: infinite;
     margin-top: 53px;
     z-index: 2;
 }
+
 @keyframes solarline {
-    0%, 100% {
+
+    0%,
+    100% {
         background-color: rgb(238, 245, 29);
         right: 90px;
     }
@@ -138,11 +242,9 @@
 .flex-box4 {
     align-self: start;
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
-    z-index: 1;
 }
 
 .flex-box5 {

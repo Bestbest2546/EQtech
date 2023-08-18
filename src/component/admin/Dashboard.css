@@ -8,9 +8,15 @@
 .flex-box {
     display: flex;
     flex-grow: row;
+    justify-content: space-evenly;
     border: 1px solid;
     border-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+}
+
+.flex-box h1 {
+    color: rgb(98, 98, 98);
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 .flex-box-2 {
@@ -19,18 +25,12 @@
     border: 1px solid;
     border-color: rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    gap: 20px;
-
-
 }
 
 .flex-box-graph {
-    display: flex;
-    flex-flow: column;
+    display:grid;
     width: 70%;
-    padding: 20px;
     border-color: rgba(0, 0, 0, 1);
-    justify-content: center;
 }
 
 .flex-box-monitor {
@@ -40,6 +40,12 @@
     padding: 20px;
     border-color: rgba(0, 0, 0, 0.1);
     justify-content: center;
+}
+.flex-box-monit-svg{
+    display: flex;
+    justify-content: center;
+    z-index: 2;
+    transform: scale(0.87);
 }
 
 .flex-box-below {
@@ -71,15 +77,27 @@
 
 .flex-box-basic {
     display: flex;
-    flex-flow: row;
-    width: fit-content;
-    padding: 20px;
-    border-color: rgba(0, 0, 0, 0.1);
-    gap: 20px;
+    flex-flow: column;
+    /* ให้เป็นแนวตั้ง */
+    height: fit-content;
+    max-height: 390px;
+    /* ค่าตัวอย่าง คุณควรกำหนดความสูงที่คุณต้องการ */
+    border: 1px solid rgba(207, 207, 207, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    /* ให้เลื่อนได้แนวตั้ง */
+    overflow-x: hidden;
+    /* ปิดการเลื่อนแนวนอน */
+    transform: scale(0.9);
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.01);
+
 }
+
 
 .flex-box-basic p {
     font-size: 22px;
+    color: rgb(74, 74, 74);
 }
 
 .flex-box-graph-right {
@@ -98,12 +116,12 @@
     width: fit-content;
     padding: 20px;
     border-color: rgba(0, 0, 0, 0.1);
-
-    gap: 70px;
+    gap: 90px;
 }
 
 .flex-box-rate p {
     font-size: 22px;
+    color: rgb(74, 74, 74);
 }
 
 .flex-box-rating {

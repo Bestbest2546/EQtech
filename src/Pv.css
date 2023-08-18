@@ -1,31 +1,37 @@
 .pvbatt {
-    display: grid;
-    place-content: center;
-  }
-  .pvbatt p {
-    color: rgb(0, 0, 0);
-    font-size: 70%;
-    margin: -8px;
-  }
-  .circlepv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border: 4px solid #FCEE9E;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-    background-color: #ffffff;
-  }
-  .circlepvbackground{
-    background-clip: padding-box;
-    box-shadow: 0 0 0 2px #f9f6ac;
-    padding: 2px;
-    border-radius: 50%;
-  }
-  .iconpv {
-    width: 30px;
-    height: 30px;
-    filter: invert(0);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.pvbatt p {
+  color: rgb(0, 0, 0);
+  font-size: 65%;
+  margin: -6px;
+}
+
+.circlepv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 4px solid #FCEE9E;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background-color: #ffffff;
+}
+
+.circlepvbackground {
+  background-clip: padding-box;
+  box-shadow: 0 0 0 2px #f9f6ac;
+  padding: 2px;
+  border-radius: 50%;
+}
+
+.iconpv {
+  width: 30px;
+  height: 30px;
+  filter: invert(0);
+}

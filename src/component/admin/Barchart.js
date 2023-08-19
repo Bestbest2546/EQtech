@@ -45,10 +45,16 @@ const BarChart = () => {
       }
     ],
   };
+  const options = {
+    maintainAspectRatio: false, // ปิดการใช้งาน aspect ratio ที่เป็น default
+    responsive: true, // ทำให้กราฟ responsive
+    scales: {
+    }
+  };
   
   return (
-    <div>
-      <Bar data={data} />
+    <div style={{width: '60vw', height: '60vh'}}>
+      <Bar data={data} options={options} />
     </div>
   );
 };

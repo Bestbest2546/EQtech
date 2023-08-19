@@ -29,24 +29,30 @@ const Dashboard = () => {
             </div>
             <div className='flex-box'>
                 <div className='flex-box-monitor'>
+                    <div className='pvtobatt'></div>
+                    <div className='pvtoload'></div>
                     <div className='flex-box1'>
                         <Pv />
                         <div className='flex-box-monit-svg'>
-                            <svg width="221" height="221" viewBox="0 0 221 221" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M98.5 0L98.5 75.5C98.5 88.2025 88.2025 98.5 75.5 98.5L3.32382e-06 98.5" stroke="#F8CD5E" />
-                                <path d="M122.5 221L122.5 145.5C122.5 132.797 132.797 122.5 145.5 122.5L221 122.5" stroke="#EB9494" />
-                                <path d="M0 122.5L75.5 122.5C88.2025 122.5 98.5 132.797 98.5 145.5L98.5 221" stroke="#EB9494" />
-                                <path d="M221 98.5L145.5 98.5C132.797 98.5 122.5 88.2026 122.5 75.5L122.5 7.62939e-06" stroke="#F8CD5E" />
-                                <line y1="110.5" x2="221" y2="110.5" stroke="#51BBCA" />
+                            <svg width="221" height="222" viewBox="0 0 221 222" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M98.5 1L98.5 76.5C98.5 89.2025 88.2025 99.5 75.5 99.5L3.32382e-06 99.5" stroke="#F8CD5E" />
+                                <path d="M122.5 222L122.5 146.5C122.5 133.797 132.797 123.5 145.5 123.5L221 123.5" stroke="#EB9494" />
+                                <path d="M0 123.5L75.5 123.5C88.2025 123.5 98.5 133.797 98.5 146.5L98.5 222" stroke="#EB9494" />
+                                <path d="M221 99.5L145.5 99.5C132.797 99.5 122.5 89.2026 122.5 76.5L122.5 1.00001" stroke="#F8CD5E" />
+                                <line y1="111.5" x2="221" y2="111.5" stroke="#51BBCA" />
+                                <line x1="110" y1="221.5" x2="110" y2="0.5" stroke="#F8CD5E" />
                             </svg>
                         </div>
                     </div>
                     <div className='flex-box2'>
                         <Batt />
+                        <div className='batttoload'></div>
                         <Load />
                     </div>
                     <div className='flex-box3'>
+                        <div className='gridtobatt'></div>                           
                         <Grid />
+                        <div className='gridtoload'></div>
                     </div>
                 </div>
                 <div className='flex-box-basic'>
@@ -83,10 +89,10 @@ const Dashboard = () => {
             </div>
             <div className='flex-box-2'>
                 <div className='flex-box-graph'>
-                    <BarChart />
+                    <Linechart />
                 </div>
                 <div className='flex-box-graph-right'>
-                    <PieChart />
+                    <BarChart />
                 </div>
             </div>
 

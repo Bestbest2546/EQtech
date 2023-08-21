@@ -321,7 +321,7 @@ const Dashboard = () => {
                     <h2>CHARGER-PRIORITY:
                         {
                             charger === 0 ? 'Utility first' :
-                                charger === 1 ? 'Solar first' : // assuming this was intended
+                                charger === 1 ? 'Solar first' :
                                     charger === 2 ? 'Solar + Utility' :
                                         charger === 3 ? 'Only solar charging' :
                                             '???'

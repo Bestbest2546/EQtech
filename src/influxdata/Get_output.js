@@ -7,16 +7,16 @@ const influxDB = new InfluxDB({
 
 const queryApi = influxDB.getQueryApi('TTTA'); 
 
-async function Loadpercent() {
+async function Get_output() {
   const fluxQuery = `
     from(bucket:"TTTA ENERGY")
       |> range(start: -1m)
       |> filter(fn: (r) => r._measurement == "Inverter1")
-      |> filter(fn: (r) => r._field == "outut_load_percent")
+      |> filter(fn: (r) => r._field == "output_source_priority")
   `;
   const result = await queryApi.collectRows(fluxQuery);
 
   return result;
 }
 
-export default Loadpercent;
+export default Get_output;

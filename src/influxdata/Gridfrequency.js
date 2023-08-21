@@ -7,18 +7,16 @@ const influxDB = new InfluxDB({
 
 const queryApi = influxDB.getQueryApi('TTTA'); // แทนที่ด้วยชื่อองค์กรของคุณใน InfluxDB
 
-async function Getgrid() {
+async function Gridfrequency() {
   const fluxQuery = `
     from(bucket:"TTTA ENERGY")
       |> range(start: -1m)
       |> filter(fn: (r) => r._measurement == "Inverter1")
-      |> filter(fn: (r) => r._field == " grid_voltage ")
+      |> filter(fn: (r) => r._field == "grid_frequency")
   `;
   const result = await queryApi.collectRows(fluxQuery);
 
   return result;
 }
 
-
-
-export default Getgrid;
+export default Gridfrequency;

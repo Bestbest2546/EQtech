@@ -7,16 +7,16 @@ const influxDB = new InfluxDB({
 
 const queryApi = influxDB.getQueryApi('TTTA'); 
 
-async function Loadpercent() {
+async function pvcurrent() {
   const fluxQuery = `
     from(bucket:"TTTA ENERGY")
       |> range(start: -1m)
       |> filter(fn: (r) => r._measurement == "Inverter1")
-      |> filter(fn: (r) => r._field == "outut_load_percent")
+      |> filter(fn: (r) => r._field == "pv_input_current_for_battery")
   `;
   const result = await queryApi.collectRows(fluxQuery);
 
   return result;
 }
 
-export default Loadpercent;
+export default pvcurrent;

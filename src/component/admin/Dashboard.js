@@ -24,6 +24,19 @@ import Outputfre from '../../influxdata/Outputfre';
 import Outputapparent from '../../influxdata/outputapparent';
 import outputactive from '../../influxdata/outputactive';
 import pvcurrent from '../../influxdata/pvcurrent';
+import ac_rated_volt from '../../influxdata/ac_rated_volt';
+import ac_rated_current from '../../influxdata/ac_rated_current';
+import battery_rated_voltage from '../../influxdata/battery_rated_voltage';
+import ac_rated_fre from '../../influxdata/ac_rated_fre';
+import ac_output_rating_apparent_power from '../../influxdata/ac_output_rating_apparent_power';
+import ac_output_rating_active_power from '../../influxdata/ac_output_rating_active_power';
+import battery_recharge_voltage from '../../influxdata/battery_recharge_voltage';
+import battery_under_voltage from '../../influxdata/battery_under_voltage';
+import battery_bulk_voltage from '../../influxdata/battery_bulk_voltage';
+import battery_float_voltage from '../../influxdata/battery_float_voltage';
+import batt_type from '../../influxdata/batt_type';
+import current_max_ac_charging_current from '../../influxdata/current_max_ac_charging_current';
+import current_max_charging_current from '../../influxdata/current_max_charging_current';
 
 import iconinverter from './inverter.png'
 
@@ -45,6 +58,214 @@ const Dashboard = () => {
     const [dataoutputapparent, setoutputapparent] = useState([]);
     const [dataoutputactive, setoutputactive] = useState([]);
     const [datapvcurrent, setpvcurrent] = useState([]);
+    const [dataac_rated_volt, setac_rated_volt] = useState([]);
+    const [dataac_rated_current, setac_rated_current] = useState([]);
+    const [databattery_rated_voltage, setbattery_rated_voltage] = useState([]);
+    const [dataac_rated_fre, setac_rated_fre] = useState([]);
+    const [dataac_output_rating_apparent_power, setac_output_rating_apparent_power] = useState([]);
+    const [dataac_output_rating_active_power, setac_output_rating_active_power] = useState([]);
+    const [databattery_recharge_voltage, setbattery_recharge_voltage] = useState([]);
+    const [databattery_under_voltage, setbattery_under_voltage] = useState([]);
+    const [databattery_bulk_voltage, setbattery_bulk_voltage] = useState([]);
+    const [databattery_float_voltage, setbattery_float_voltage] = useState([]);
+    const [databatt_type, setbbatt_type] = useState([]);
+    const [datacurrent_max_ac_charging_current, setcurrent_max_ac_charging_current] = useState([]);
+    const [datacurrent_max_charging_current, setcurrent_max_charging_current] = useState([]);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            current_max_charging_current().then((response) => {
+                if (Array.isArray(response)) {
+                    setcurrent_max_charging_current(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            current_max_ac_charging_current().then((response) => {
+                if (Array.isArray(response)) {
+                    setcurrent_max_ac_charging_current(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            batt_type().then((response) => {
+                if (Array.isArray(response)) {
+                    setbbatt_type(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            battery_float_voltage().then((response) => {
+                if (Array.isArray(response)) {
+                    setbattery_float_voltage(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            battery_bulk_voltage().then((response) => {
+                if (Array.isArray(response)) {
+                    setbattery_bulk_voltage(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            battery_under_voltage().then((response) => {
+                if (Array.isArray(response)) {
+                    setbattery_under_voltage(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            battery_recharge_voltage().then((response) => {
+                if (Array.isArray(response)) {
+                    setbattery_recharge_voltage(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            ac_output_rating_active_power().then((response) => {
+                if (Array.isArray(response)) {
+                    setac_output_rating_active_power(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            ac_output_rating_apparent_power().then((response) => {
+                if (Array.isArray(response)) {
+                    setac_output_rating_apparent_power(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            ac_rated_fre().then((response) => {
+                if (Array.isArray(response)) {
+                    setac_rated_fre(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            battery_rated_voltage().then((response) => {
+                if (Array.isArray(response)) {
+                    setbattery_rated_voltage(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            ac_rated_current().then((response) => {
+                if (Array.isArray(response)) {
+                    setac_rated_current(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            ac_rated_volt().then((response) => {
+                if (Array.isArray(response)) {
+                    setac_rated_volt(response);
+
+                } else {
+                    console.error('Invalid data format received from InfluxDB.');
+                }
+            });
+        }, 2000);
+
+        return () => clearInterval(interval);
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -56,7 +277,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -71,7 +292,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -86,7 +307,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -101,7 +322,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -116,7 +337,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -131,7 +352,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -146,7 +367,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -161,7 +382,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -175,7 +396,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -188,7 +409,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -202,7 +423,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -217,7 +438,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
         return () => clearInterval(interval);
     }, []);
 
@@ -231,7 +452,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -246,7 +467,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -261,7 +482,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -276,7 +497,7 @@ const Dashboard = () => {
                     console.error('Invalid data format received from InfluxDB.');
                 }
             });
-        }, 1000);
+        }, 2000);
 
         return () => clearInterval(interval);
     }, []);
@@ -297,7 +518,19 @@ const Dashboard = () => {
     const outputapparent = dataoutputapparent.length > 0 ? dataoutputapparent[dataoutputapparent.length - 1]._value : 0;
     const active = dataoutputactive.length > 0 ? dataoutputactive[dataoutputactive.length - 1]._value : 0;
     const currentpv = datapvcurrent.length > 0 ? datapvcurrent[datapvcurrent.length - 1]._value : 0;
-
+    const acratevolt = dataac_rated_volt.length > 0 ? dataac_rated_volt[dataac_rated_volt.length - 1]._value : 0;
+    const acratecurrent = dataac_rated_current.length > 0 ? dataac_rated_current[dataac_rated_current.length - 1]._value : 0;
+    const battratevolt = databattery_rated_voltage.length > 0 ? databattery_rated_voltage[databattery_rated_voltage.length - 1]._value : 0;
+    const acratefre = dataac_rated_fre.length > 0 ? dataac_rated_fre[dataac_rated_fre.length - 1]._value : 0;
+    const acapparentpower = dataac_output_rating_apparent_power.length > 0 ? dataac_output_rating_apparent_power[dataac_output_rating_apparent_power.length - 1]._value : 0;
+    const acactivepower = dataac_output_rating_active_power.length > 0 ? dataac_output_rating_active_power[dataac_output_rating_active_power.length - 1]._value : 0;
+    const battrechargevoltage = databattery_recharge_voltage.length > 0 ? databattery_recharge_voltage[databattery_recharge_voltage.length - 1]._value : 0;
+    const battundervoltage = databattery_under_voltage.length > 0 ? databattery_under_voltage[databattery_under_voltage.length - 1]._value : 0;
+    const battbuklvoltage = databattery_bulk_voltage.length > 0 ? databattery_bulk_voltage[databattery_bulk_voltage.length - 1]._value : 0;
+    const battfloatvoltage = databattery_float_voltage.length > 0 ? databattery_float_voltage[databattery_float_voltage.length - 1]._value : 0;
+    const batttype = databatt_type.length > 0 ? databatt_type[databatt_type.length - 1]._value : 0;
+    const currentmaxaccharge = datacurrent_max_ac_charging_current.length > 0 ? datacurrent_max_ac_charging_current[datacurrent_max_ac_charging_current.length - 1]._value : 0;
+    const currentmaxcharging = datacurrent_max_charging_current.length > 0 ? datacurrent_max_charging_current[datacurrent_max_charging_current.length - 1]._value : 0;
 
     return (
         <div className='contain-flex'>
@@ -375,17 +608,30 @@ const Dashboard = () => {
                     <p>PV Charging power: {pv} Watt</p>
                 </div>
 
-                <div className='flex-box-rate'>
-                    <div>
-                        <p>Ac rated Volt: --</p>
-                        <p>Ac rated current: --</p>
-                        <p>Rated BAT Volt: --</p>
+                <div className='flex-box-basic'>
+                    <div className='topic-data'>
+                        <h1>Rated info</h1>
                     </div>
-                    <div>
-                        <p>Rated output Volt: --</p>
-                        <p>Rated output Fre: --</p>
-                        <p>Rated output current: --</p>
-                    </div>
+                    <p>Ac rated Volt: {acratevolt} Volt</p>
+                    <p>Ac rated current: {acratecurrent} A</p>
+                    <p>Ac rated fre: {acratefre} Hz</p>
+                    <p>Ac rated apparent power: {acapparentpower} VA</p>
+                    <p>Ac rated active power: {acactivepower} Watt</p>
+                    <p>Rated BAT Volt: {battratevolt} Volt</p>
+                    <p>BAT rechrage Volt: {battrechargevoltage} Volt</p>
+                    <p>BAT under Volt: {battundervoltage} Volt</p>
+                    <p>BAT bulk Volt: {battbuklvoltage} Volt</p>
+                    <p>BAT float Volt: {battfloatvoltage} Volt</p>
+                    <p>BAT type:
+                        {
+                            batttype === 0 ? 'AGM' :
+                            batttype === 1 ? 'Flooded' :
+                            batttype === 2 ? 'User define' :
+                            '???'
+                        }
+                    </p>
+                        <p>Current_max_ac_charging_current: {currentmaxaccharge} A</p>
+                        <p>Current_max_charging_current: {currentmaxcharging} A</p>
                 </div>
             </div>
             <div className='flex-box-2'>

@@ -1,0 +1,9 @@
+.active {
+    background-color: rgb(40, 154, 255) !important;  /* ใช้ !important เพื่อแน่ใจว่าจะ override สไตล์ของ Material-UI */
+    color: white !important;  /* เปลี่ยนสีข้อความเป็นสีขาว */
+}
+
+.hold:hover {
+    background-color: rgb(40, 154, 255) !important; 
+    color: white !important;
+}

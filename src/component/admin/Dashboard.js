@@ -7,6 +7,8 @@ import Pv from '../../Data/Pv';
 import './Dashboard.css';
 import Linechart from './Linechart';
 import BarChart from './BarChart';
+import BarChartComponent from './BarChartComponent';
+import LineChartComponenthart from './LineChartComponent';
 
 import Getbattery from '../../influxdata/Getbattery';
 import Getbatteryvolt from '../../influxdata/Getbatteryvolt';
@@ -630,16 +632,16 @@ const Dashboard = () => {
                             '???'
                         }
                     </p>
-                        <p>Current_max_ac_charging_current: {currentmaxaccharge} A</p>
-                        <p>Current_max_charging_current: {currentmaxcharging} A</p>
+                        <p>Current max ac charging current: {currentmaxaccharge} A</p>
+                        <p>Current max charging current: {currentmaxcharging} A</p>
                 </div>
             </div>
             <div className='flex-box-2'>
                 <div className='flex-box-graph'>
-                    <Linechart />
+                    <LineChartComponenthart />
                 </div>
                 <div className='flex-box-graph-right'>
-                    <BarChart />
+                    <BarChartComponent />
                 </div>
             </div>
 

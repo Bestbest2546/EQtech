@@ -40,7 +40,7 @@ body,
 
 
 ::-webkit-scrollbar-track {
-  background: #e7e7e7;
+  background: #f5d5c7;
 }
 
 
@@ -50,5 +50,5 @@ body,
 
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3e3d3d;
+  background: #c43404;
 }

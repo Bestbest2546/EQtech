@@ -45,29 +45,37 @@ const BarCounter = ({ Timeauto }) => {
     const percentCount1 = (count1 / totalCount) * 100;
 
     return (
-        <div className='barcontain'>
-            <p>Value</p>
-            <div style={{
-                background: `linear-gradient(to right, rgb(255, 99, 132) ${percentCount1}%, rgb(75, 192, 192) ${percentCount1}%, rgb(75, 192, 192) 100%)`,
-                height: '13px',
-                width: '100%',
-                transition: 'background 1s'
-            }}>
+        <div className='containdoublebar'>
+            <div className='barcontain'>
+                <p>Head value</p>
+                <div style={{
+                    background: `linear-gradient(to right, #fa9200 ${percentCount1}%, #ffbe61 ${percentCount1}%, #ffbe61 100%)`,
+                    height: '13px',
+                    width: '100%',
+                    transition: 'background 1s'
+                }}>
+                </div>
+                <div className='valueleft'>
+                    <p>Value 1: {count1} ({percentCount1.toFixed(2)}%)</p>
+                    <p>Value 2: {count2} ({(100 - percentCount1).toFixed(2)}%)</p>
+                </div>
             </div>
-            <div className='value'>
-                <p>Value 1: {count1} ({percentCount1.toFixed(2)}%)</p>
-                <p>Value 2: {count2} ({(100 - percentCount1).toFixed(2)}%)</p>
+            <div className='linecenter'>
+
             </div>
-            <div style={{
-                background: `linear-gradient(to right, rgb(255, 99, 132) ${percentCount1}%, rgb(75, 192, 192) ${percentCount1}%, rgb(75, 192, 192) 100%)`,
-                height: '13px',
-                width: '100%',
-                transition: 'background 1s'
-            }}>
-            </div>
-            <div className='value'>
-                <p>Value 1: {count1} ({percentCount1.toFixed(2)}%)</p>
-                <p>Value 2: {count2} ({(100 - percentCount1).toFixed(2)}%)</p>
+            <div className='barcontain'>
+                <p>Head value</p>
+                <div style={{
+                    background: `linear-gradient(to right, #326AAA ${percentCount1}%, #91C3EA ${percentCount1}%, #91C3EA 100%)`,
+                    height: '13px',
+                    width: '100%',
+                    transition: 'background 1s'
+                }}>
+                </div>
+                <div className='valueright'>
+                    <p>Value 1: {count1} ({percentCount1.toFixed(2)}%)</p>
+                    <p>Value 2: {count2} ({(100 - percentCount1).toFixed(2)}%)</p>
+                </div>
             </div>
         </div>
     );

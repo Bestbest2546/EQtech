@@ -7,6 +7,7 @@ import { CssBaseline, Box } from "@mui/material";
 import Dashboard from "./component/admin/Dashboard";
 import Manage from "./component/admin/Manage";
 import ViewData from "./component/admin/ViewData";
+import Settingstatus from "./component/admin/Settingstatus";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/admin/Dashboard" element={<Dashboard />} />
                 <Route path="/admin/Manage" element={<Manage />} />
                 <Route path="/admin/Viewtable" element={<ViewData />} />
+                <Route path="/admin/Settingstatus" element={<Settingstatus />} />
               </Routes>
             </Box>
           </div>

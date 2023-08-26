@@ -3,9 +3,6 @@ import { Bar } from 'react-chartjs-2'; // แก้ไขที่นี่
 import React, { useState, useEffect } from 'react';
 import './Button.css';
 import Button from '@mui/material/Button';
-import BarCounter from './BarCounter';
-
-
 
 const BarChartComponent = () => {
     const [data, setData] = useState(null);
@@ -20,18 +17,18 @@ const BarChartComponent = () => {
                 |> filter(fn: (r) => r._measurement == "Inverter1")
                 |> filter(fn: (r) => r._field == "Battery Voltage")
         `;
-        const fluxQuerybattery_capacity = `
-            from(bucket: "TTTA ENERGY")
-                |> range(start: ${timeRange})
-                |> filter(fn: (r) => r._measurement == "Inverter1")
-                |> filter(fn: (r) => r._field == "battery_capacity")
-        `;
+        // const fluxQuerybattery_capacity = `
+        //     from(bucket: "TTTA ENERGY")
+        //         |> range(start: ${timeRange})
+        //         |> filter(fn: (r) => r._measurement == "Inverter1")
+        //         |> filter(fn: (r) => r._field == "battery_capacity")
+        // `;
         Promise.all([
             queryApi.collectRows(fluxQuery),
-            queryApi.collectRows(fluxQuerybattery_capacity)
-        ]).then(([batteryData, battery_capacity]) => {
-            let filteredBattery = batteryData.filter((_, index) => index % 200 === 0);
-            let filteredbattery_capacity = battery_capacity.filter((_, index) => index % 200 === 0);
+            // queryApi.collectRows(fluxQuerybattery_capacity)
+        ]).then(([batteryData, ]) => {
+            let filteredBattery = batteryData.filter((_, index) => index % 100 === 0);
+            // let filteredbattery_capacity = battery_capacity.filter((_, index) => index % 200 === 0);
 
             let chartData = {
                 labels: filteredBattery.map(row => row._time.slice(0, -11)),
@@ -39,15 +36,15 @@ const BarChartComponent = () => {
                     {
                         data: filteredBattery.map(row => row._value),
                         label: "Battery Voltage",
-                        backgroundColor: "rgb(255, 99, 132)",
-                        borderColor: "rgb(255, 99, 132)",
+                        backgroundColor: "#fb4f14",
+                        borderColor: "#fb4f14",
                     },
-                    {
-                        data: filteredbattery_capacity.map(row => row._value),
-                        label: "battery_capacity",
-                        backgroundColor: "rgb(75, 192, 192)",
-                        borderColor: "rgb(75, 192, 192)",
-                    }
+                    // {
+                    //     data: filteredbattery_capacity.map(row => row._value),
+                    //     label: "battery_capacity",
+                    //     backgroundColor: "rgb(75, 192, 192)",
+                    //     borderColor: "rgb(75, 192, 192)",
+                    // }
                 ]
             };
             setData(chartData);
@@ -66,7 +63,7 @@ const BarChartComponent = () => {
     };
 
     return (
-        <div style={{ width: '100vw', height: '90%' }}>
+        <div style={{ width: '100vw', height: '93%' }}>
             <div>
                 <Button variant="outlined"
                     onClick={() => setTimeRange('-1d')}
@@ -87,7 +84,6 @@ const BarChartComponent = () => {
                     Year
                 </Button>
             </div>
-            {/* <BarCounter/> */}
             {data ? <Bar data={data} options={options} /> : <p>Loading...</p>}
         </div>
     );

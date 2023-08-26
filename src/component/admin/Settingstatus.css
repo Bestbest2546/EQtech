@@ -1,0 +1,67 @@
+body {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+}
+
+.containstatus {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: start;
+    height: auto;
+    width: auto;
+    gap: 20px;
+}
+
+.img {
+    background-image: url('Background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+.settingmenu {
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    background-color: rgb(255, 255, 255);
+    width: 20%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 1px solid rgb(206, 204, 204);
+    box-shadow: 4px 0 5px -2px rgba(0, 0, 0, 0.2), -4px 0 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+
+.settingbox {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    align-items: center;
+    border-radius: 10px;
+    border: 1px solid rgb(206, 204, 204);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: auto;                                                                
+    height: auto;
+    padding: 30px;
+    box-shadow: 4px 0 5px -2px rgba(0, 0, 0, 0.2), -4px 0 5px -2px rgba(0, 0, 0, 0.2);
+}
+
+.switchbox {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nameswitch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.containparameters {
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+}

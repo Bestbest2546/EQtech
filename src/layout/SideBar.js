@@ -106,7 +106,7 @@ const SideBar = () => {
                             </Link>
 
                             <SubMenu icon={<TuneOutlinedIcon />} label="Control">
-                                <Link to={"/admin/viewtable"} className="menu-bars">
+                                <Link to={"/admin/Settingstatus"} className="menu-bars">
                                     <MenuItem icon={<ArticleOutlinedIcon />}>
                                         {" "}
                                         Setting status

@@ -4,10 +4,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import './Button.css';
 import Button from '@mui/material/Button';
-import BarCounter from './BarCounter'
+import BarCounter from './BarCounter';
 
 const LineChartComponent = () => {
-
 
     const [data, setData] = useState(null);
     const [timeRange, setTimeRange] = useState('-1d');
@@ -42,16 +41,16 @@ const LineChartComponent = () => {
                     {
                         data: filteredBattery.map(row => row._value),
                         label: "Battery Voltage",
-                        backgroundColor: "rgb(255, 99, 132)",
-                        borderColor: "rgb(255, 99, 132)",
+                        backgroundColor: "#ffd700",
+                        borderColor: "#ffd700",
                         pointRadius: 0,
                         pointHitRadius: 100,
                     },
                     {
                         data: filteredbattery_capacity.map(row => row._value),
                         label: "battery_capacity",
-                        backgroundColor: "rgb(75, 192, 192)",
-                        borderColor: "rgb(75, 192, 192)",
+                        backgroundColor: "#cc0000",
+                        borderColor: "#cc0000",
                         pointRadius: 0,
                         pointHitRadius: 100,
                     }

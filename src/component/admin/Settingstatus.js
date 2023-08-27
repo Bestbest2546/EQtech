@@ -149,7 +149,7 @@ const Settingstatus = () => {
             <Switch checked6={checked6} onChange6={handleChange6} inputProps6={{ 'aria-label': 'controlled' }} color="warning" />
           </div>
           <div className='nameswitch'>
-            <p>Backlight on</p>
+            <p>Backlight</p>
             <Switch checked7={checked7} onChange7={handleChange7} inputProps7={{ 'aria-label': 'controlled' }} color="warning" />
           </div>
           <div className='nameswitch'>
@@ -161,6 +161,18 @@ const Settingstatus = () => {
             <Switch checked9={checked9} onChange9={handleChange9} inputProps9={{ 'aria-label': 'controlled' }} color="warning" />
           </div>
         </div>
+      </div>
+      <div className='settingmenu'>
+        <h4>Note!</h4>
+        <p>[Buzzer]:Enable/disable silence buzzer or open buzzer</p>
+        <p>[Overload Bypass]:Enable/disable overload bypass</p>
+        <p>[Power Saving]:Enable/disable power saving</p>
+        <p>[LCD Display]:Enable/disable LAD display escape to default page after 1min timeout</p>
+        <p>[Overload Restart]:Enable/disable overload restart</p>
+        <p>[Over Temperature Restart]:Enable/disable over temperature restart</p>
+        <p>[Backlight]:Enable/disable backlight on</p>
+        <p>[Alarm]:Enable/disable alarm on when primary source interrupt</p>
+        <p>[Fault Code Record]:Enable/disable fault code record</p>
       </div>
     </div>
   )

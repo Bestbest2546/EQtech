@@ -1,0 +1,22 @@
+.containvaluehz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid rgb(203, 201, 201);
+    border-radius: 10px;
+    width: 20%;
+    padding: 25px;
+    gap: 10px;
+    height: fit-content;
+}
+
+.widthbox {
+    border: 1px solid rgb(203, 201, 201);
+    border-radius: 10px;
+    width: 60%;
+}
+
+.boxselect{
+    display: flex;
+    flex-direction: row;
+}

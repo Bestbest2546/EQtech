@@ -101,7 +101,7 @@ const SideBar = () => {
                                 </Box>
                             )}
 
-                            <Link to="/admin/Dashboard" className="menu-bars">
+                            <Link to="/" className="menu-bars">
                                 <MenuItem icon={<HomeOutlinedIcon />}>Home</MenuItem>
                             </Link>
 
@@ -112,34 +112,30 @@ const SideBar = () => {
                                         Setting status
                                     </MenuItem>
                                 </Link >
-                                <Link to={"/admin/viewtable"} className="menu-bars">
+                                <Link to={"/admin/Setdefault"} className="menu-bars">
                                     <MenuItem icon={<ManageHistoryOutlinedIcon />}>
                                         {" "}
                                         Set default
                                     </MenuItem>
                                 </Link >
-                                <Link to={"/admin/viewtable"} className="menu-bars">
+                                <Link to={"/admin/Settingmaxcharge"} className="menu-bars">
                                     <MenuItem icon={<BatteryChargingFullOutlinedIcon />}>
                                         {" "}
                                        Setting max charge
                                     </MenuItem>
                                 </Link >
-                                <Link to={"/admin/viewtable"} className="menu-bars">
+                                <Link to={"/admin/Settingoutput"} className="menu-bars">
                                     <MenuItem icon={<ExitToAppOutlinedIcon />}>
                                         {" "}
                                         Setting output
                                     </MenuItem>
                                 </Link >
-                                <Link to={"/admin/viewtable"} className="menu-bars">
+                                <Link to={"/admin/Settingbattery"} className="menu-bars">
                                     <MenuItem icon={<RoomPreferencesOutlinedIcon />}>
                                         {" "}
                                         Setting Battery
                                     </MenuItem>
                                 </Link >
-                                {/* <MenuItem icon={<BarChartOutlinedIcon />}>
-                                    {" "}
-                                    Line charts
-                                </MenuItem> */}
                             </SubMenu>
 
                             <SubMenu label="Monitoring" icon={<DesktopMacOutlinedIcon />}>
@@ -158,7 +154,6 @@ const SideBar = () => {
                                 <Link to={"/admin/manage"} className="menu-bars">
                                     <MenuItem>Inverter5</MenuItem>
                                 </Link>
-                                {/* <MenuItem> Admin</MenuItem> */}
                             </SubMenu>
                         </Menu>
 

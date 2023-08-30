@@ -1,0 +1,18 @@
+
+.containbattery {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(203, 201, 201);
+    width: 20%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.containsentbattery {
+    display: flex;
+    flex-direction: row;
+}
+.prioritycharge {
+    border: 1px solid rgb(203, 201, 201);
+}
